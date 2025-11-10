@@ -1,0 +1,94 @@
+body{
+    box-sizing: border-box;
+}
+.main{
+    border-radius: 3rem;
+}
+header{
+    background-color: rgba(121, 1, 1, 0.466);
+    display: flex;
+    justify-content: space-evenly;
+}
+.circle{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color: rgb(9, 8, 8);
+    margin:5px ;
+}
+.rectangle1{
+    height: 3rem;
+    width: 10rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 15px;
+}
+.rectangle2{
+    height:4rem ;
+    width: 30rem;
+    background-color: white;
+    margin-top: 15px;
+    border-radius: 5rem;
+}
+.main_section{
+    /* background-color: red;
+    display: flex;
+    flex-direction: row;
+    gap: 30rem; */
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;     /* align both sections to the top */
+    gap: 10rem;                  /* space between sidebar and white boxes */
+    padding-top: 2rem;           /* space below header */
+    min-height: 40rem;
+    
+}
+.sidebar{
+    min-height: 40rem;
+    width: 7rem;
+    background-color: rgb(250, 155, 236);
+    border-radius: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 10px rgb(250, 155, 236);
+
+}
+.sidebar_color{
+    background-color: white;
+    height:3rem ;
+    width:7rem ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.section2{
+
+    /* display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center; */
+    /* display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: flex-start;      
+    margin-top: 3rem;             
+    padding-top: 2rem;  */
+
+    display: flex;
+    gap: 3rem;
+    justify-content: center;     /* horizontal alignment of the white boxes */
+    align-items: flex-start; 
+
+}
+.rec1{
+    height: 4rem;
+    width: 4rem;
+    background-color: white;
+    margin-top: 0;
+}
