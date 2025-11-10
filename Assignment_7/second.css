@@ -1,0 +1,42 @@
+
+body {
+  margin: 0;
+  height: 100vh;
+
+  color: white;
+  font-family: Arial, sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  font-size: 1em;
+}
+.box1 {
+  width: 200px;
+  height: 150px;
+  background-color: #1e90ff;
+}
+.box2 {
+  width: 20em;
+  height: 30vh;
+  background-color: #ff6347;
+}
+.box3 {
+  background-color: #32cd32;
+  width: 40%;
+  min-height: 100px;
+  max-width: 400px;
+  overflow: auto; 
+}
