@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(1, 1, 14);
+}
+.container1{
+    background-color: rgba(4, 8, 245, 0.605);
+    padding: 2rem;
+    border: 3px rgba(243, 5, 239, 0.76);
+    height: 50rem;
+    width: 50rem;
+    margin: 0 auto;
+}
+p{
+    color: white;
+    text-align: left;
+}
+.container1{
+    display: flex;
+    justify-content: center;
+
+}
+.card
+{
+    background-color: white;
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    height: 30rem;
+    width: 40rem;
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+
+}
