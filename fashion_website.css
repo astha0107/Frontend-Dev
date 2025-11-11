@@ -109,18 +109,22 @@ nav{
     transition: 0.2sec;
     box-shadow: 0 5px 10px rgb(0,0,0,3);
 }
-.second{
-    padding: 2rem;
-    background-color: white;
+.content{
+    padding-top: 20px;
+    /* background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
+    box-sizing: border-box; */
+    text-align: center;
+    justify-content: center;
     
 }
 .heading2{
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
+    align-items: center;
     padding: 2rem;
     color: #224F34;
     font-family: "Roboto Slab";
@@ -128,9 +132,181 @@ nav{
     font-size: 3rem;
 }
 .heading2_content{
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
+    align-items: center;
     font-family: "Poppins";
     font-size: 1.5rem;
     color: #224F34;
+}
+.second_sub{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5px;
+    padding: 80px ;
+    justify-items: center;
+    align-items: center;
+}
+
+.img_text_setting{
+    
+    justify-content: center;
+    font-family: "poppins";
+    text-align: center;
+}
+.img_setting{
+    width: 450px;
+    height: auto;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.see_btn{
+    display: flex;
+    /* padding: 1rem; */
+    align-items: center;
+    justify-content: center;
+}
+.see{
+    background-color: white;
+    color: #224F34;
+    text-align: center;
+    padding: 1rem;
+    size: 50px;
+    border: 2px solid #224F34;
+    cursor: pointer;
+    transition: 0.2sec;
+    justify-items: center;
+}
+.see:hover{
+    background-color: #224F34;
+    color: white;
+}
+
+.content_third{
+    padding: 30px;
+    justify-content: center;
+    text-align: center;
+}
+.heading3{
+    color: #224F34;
+    font-family: "Roboto Slab";
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 2rem;
+}
+.heading3_content{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.category{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 5rem;
+}
+.third_style{
+    font-size: 30px;
+}
+#yo{
+    text-decoration: underline;
+}
+
+.third_sub{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 5px;
+    padding: 80px ;
+    justify-items: center;
+    align-items: center;
+}
+.img_text_setting2{
+    
+    justify-content: center;
+    font-family: "poppins";
+    text-align: center;
+}
+.img_setting2{
+    width: 250px;
+    height: auto;
+    align-items: center;
+    margin-bottom: 20px;
+}
+/* .fourth{
+    display: flex;
+    justify-items: center;
+    padding: 5rem;
+    background-color: #C2EFD4;
+}
+
+.fourth_img{
+    display: flex;
+    justify-items: center;
+    padding: 5rem;
+    background-color: #C2EFD4;
+}
+.text2{
+    
+    padding: 5rem;
+    background-color: #C2EFD4;
+}
+.heading4{
+    font-family: "Roboto Slab";
+    font-size: 50px;
+    color: #224F34;
+    font-weight: bold;
+}
+.heading4_content{
+    font-family: "Poppins";
+    font-size: 25px;
+    color: #224F34;
+} */
+.exclusive{
+    display: flex;
+    padding: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+.banner{
+    height: auto;
+    width: 1000px;
+}
+
+.content_fifth{
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+}
+.fifth_heading{
+    font-family: "Roboto Slab";
+    font-size: 50px;
+    color: #224F34;
+    padding-bottom: 30px;
+}
+.fifth_content{
+    font-family: "Poppins";
+    font-size: 30px;
+    color: #224F34;
+}
+.fifth_sub{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5px;
+    padding: 80px ;
+    justify-items: center;
+    align-items: center;
+}
+.img_setting3{
+    width: 430px;
+    height: auto;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.img_text_setting3{
+    justify-content: center;
+    font-family: "poppins";
+    text-align: center;
+    font-size: 20px;
 }

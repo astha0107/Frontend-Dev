@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Registration Form</title>
+</head>
+<body>
+    <h2>Course Registration Form</h2>
+
+    <form>
+        <!-- Grouping the fields using fieldset and legend -->
+        <fieldset>
+            <legend>Student Information</legend>
+
+            <!-- Name input -->
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+
+            <!-- Email input -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Course Selection</legend>
+
+            <!-- Select dropdown for course -->
+            <label for="course">Select Course:</label>
+            <select id="course" name="course" required>
+                <option value="">--Select a Course--</option>
+                <option value="webdev">Web Development</option>
+                <option value="datascience">Data Science</option>
+                <option value="ai">Artificial Intelligence</option>
+                <option value="cybersecurity">Cyber Security</option>
+            </select>
+            <br><br>
+        </fieldset>
+        <br>
+
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset">
+    </form>
+
+    <br><br>
+
+    <!-- Table showing available course schedules -->
+    <h3>Available Course Schedules</h3>
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Instructor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Monday</td>
+                <td>10:00 AM - 12:00 PM</td>
+                <td>Mr. Sharma</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>2:00 PM - 4:00 PM</td>
+                <td>Ms. Gupta</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>11:00 AM - 1:00 PM</td>
+                <td>Dr. Mehta</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+.container{
+    margin: 0 auto;
+    padding-top: 5rem;
+    background-color: rgb(132, 15, 15);
+    padding: 20px;
+    height: 45rem;
+    width: 30rem;
+}
+.img-card{
+    background-color: rgba(228, 143, 135, 0.938);
+    height: 15rem;
+    width: 25rem;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 2rem;
+
+}
+.img{
+    background-color: white;
+    height: 10rem;
+    width: 15rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    border-radius: 2rem;
+    
+}
+.text{
+    text-align: center;
+}
+.section2{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 4rem;
+}
+.card1{
+    background-color: rgba(252, 87, 87, 0.573);
+    width: 10rem;
+    height:10rem;
+    border-radius: 2rem;
+
+}
+.card2{
+    background-color: rgb(16, 0, 0);
+    width: 10rem;
+    height:10rem;
+    border-radius: 2rem;
+}
+.card3{
+    background-color: rgb(154, 140, 140);
+    width: 10rem;
+    height:10rem;
+    border-radius: 2rem;
+}
+.section3{
+    background-color: white;
+    margin: 20px auto;
+    border-radius: 2rem;
+    width: 15rem;
+    height: 3rem;
+}
+.section4{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 4rem;
+}
+.card4{
+    background-color: white;
+    border-radius: 2rem;
+    height:3rem ;
+    width: 10rem;
+}
+.card5{
+    background-color: white;
+    border-radius: 2rem;
+    height:3rem ;
+    width: 10rem;
+}
+.card6{
+    background-color: white;
+    border-radius: 2rem;
+    height:3rem ;
+    width: 10rem;
+}
