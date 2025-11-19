@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Character Counter</title>
+
+    <style>
+        h2{
+            color: rgb(2, 2, 95);
+        }
+        body {
+            background-color: burlywood;
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            font-size: 16px;
+            padding: 8px;
+        }
+
+        #counter {
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(234, 102, 7); 
+        } 
+
+        #resetBtn {
+            margin-top: 15px;
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(212, 95, 82);
+        }
+    </style>
+
+</head>
+<body>
+
+    <h2>Live Character Counter (Max 100)</h2>
+
+    <textarea id="textBox" placeholder="Start typing..."></textarea>
+    <br><br>
+
+    <span id="counter">100 characters left</span>
+    <br><br>
+
+    <button id="resetBtn">Reset</button>
+
+    
+    <script>
+        const textBox = document.getElementById("textBox");
+        const counter = document.getElementById("counter");
+        const resetBtn = document.getElementById("resetBtn");
+        const max = 100;
+        textBox.addEventListener("keydown", function(e) {
+            const remaining = max - textBox.value.length;
+
+            if (remaining <= 0 && e.key.length === 1) {
+                e.preventDefault(); 
+            }
+        });
+        textBox.addEventListener("input", function() {
+            let remaining = max - textBox.value.length;
+
+            if (remaining < 0) remaining = 0;
+
+            counter.textContent = remaining + " characters left";
+            if (remaining === 0) {
+                counter.style.color = "red";
+            } else if (remaining <= 20) {
+                counter.style.color = "orange";
+            } else {
+                counter.style.color = "green";
+            }
+        });
+        resetBtn.addEventListener("click", function() {
+            textBox.value = "";
+            counter.textContent = max + " characters left";
+            counter.style.color = "green";
+        });
+    </script>
+
+</body>
+</html>

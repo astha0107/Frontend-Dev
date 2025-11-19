@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Manager – New UI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 40px;
+        background: linear-gradient(to bottom right, #d8e6ff, #f9e7ff);
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        background: white;
+        width: 420px;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #4a4a6a;
+        font-weight: 600;
+    }
+
+    .input-area {
+        display: flex;
+        gap: 10px;
+    }
+
+    #product-input {
+        flex: 1;
+        padding: 12px;
+        border-radius: 10px;
+        border: 2px solid #cdd7ff;
+        font-size: 15px;
+        outline: none;
+        transition: 0.3s;
+        background: #f5f7ff;
+    }
+
+    #product-input:focus {
+        border-color: #8aa0ff;
+        background: white;
+        box-shadow: 0 0 8px rgba(138,160,255,0.4);
+    }
+
+    #add-product-btn {
+        padding: 12px 18px;
+        background: #7c90ff;
+        border: none;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+    #add-product-btn:hover {
+        background: #6676ff;
+        transform: scale(1.05);
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 25px;
+    }
+
+    li {
+        background: #fafaff;
+        padding: 12px 15px;
+        border-radius: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 2px solid #ececff;
+        margin-bottom: 15px;
+        transition: 0.25s ease;
+    }
+
+    li:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    }
+
+    .text {
+        font-size: 15px;
+        color: #444;
+        font-weight: 500;
+    }
+
+    .actions button {
+        margin-left: 8px;
+        padding: 7px 12px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        font-size: 13px;
+        transition: 0.2s;
+    }
+
+    .edit-btn {
+        background: #ffd86b;
+        color: #4a3c00;
+    }
+
+    .edit-btn:hover {
+        background: #ffc533;
+        transform: scale(1.1);
+    }
+
+    .delete-btn {
+        background: #ff6b6b;
+        color: white;
+    }
+
+    .delete-btn:hover {
+        background: #ff4343;
+        transform: scale(1.1);
+    }
+
+    .edit-input {
+        width: 65%;
+        padding: 8px;
+        border-radius: 8px;
+        border: 2px solid #b8c4ff;
+        outline: none;
+        background: #f0f3ff;
+        font-size: 14px;
+    }
+
+    .edit-input:focus {
+        background: white;
+        border-color: #8097ff;
+        box-shadow: 0 0 6px rgba(128,151,255,0.3);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Product List Manager</h2>
+
+    <div class="input-area">
+        <input type="text" id="product-input" placeholder="Enter product...">
+        <button id="add-product-btn">Add</button>
+    </div>
+
+    <ul id="product-list"></ul>
+</div>
+
+<script>
+    const input = document.getElementById("product-input");
+    const addBtn = document.getElementById("add-product-btn");
+    const productList = document.getElementById("product-list");
+
+    addBtn.addEventListener("click", () => {
+        const name = input.value.trim();
+        if (!name) return;
+        addProduct(name);
+        input.value = "";
+    });
+
+    function addProduct(name) {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <span class="text">${name}</span>
+            <span class="actions">
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </span>
+        `;
+        productList.appendChild(li);
+    }
+
+    let currentEdit = null;
+
+    productList.addEventListener("click", function (e) {
+
+        if (e.target.classList.contains("delete-btn")) {
+            e.target.closest("li").remove();
+            return;
+        }
+
+        if (e.target.classList.contains("edit-btn")) {
+            const li = e.target.closest("li");
+            if (currentEdit === li) return;
+            enableEditing(li);
+        }
+    });
+
+    function enableEditing(li) {
+        if (currentEdit) saveEdit(currentEdit);
+
+        const textSpan = li.querySelector(".text");
+        const oldText = textSpan.textContent;
+
+        textSpan.innerHTML = `<input type="text" class="edit-input" value="${oldText}">`;
+
+        const inp = textSpan.querySelector("input");
+        inp.focus();
+
+        currentEdit = li;
+
+        inp.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") saveEdit(li);
+        });
+    }
+
+    document.addEventListener("click", function (e) {
+        if (currentEdit && !currentEdit.contains(e.target)) {
+            saveEdit(currentEdit);
+        }
+    });
+
+    function saveEdit(li) {
+        const input = li.querySelector(".edit-input");
+        if (!input) return;
+
+        const newText = input.value.trim();
+        li.querySelector(".text").textContent = newText || "Unnamed Product";
+
+        currentEdit = null;
+    }
+</script>
+
+</body>
+</html>
